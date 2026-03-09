@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vishwakarma AI — Premium Executive Boardroom</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #c9a84c;
+    --gold-light: #f0d080;
+    --gold-dim: #7a6030;
+    --bg: #020408;
+    --bg-panel: #080d14;
+    --bg-card: #0d1520;
+    --border: #1a2535;
+    --border-bright: #2a3f5f;
+    --text: #e8edf5;
+    --text-dim: #6b7f96;
+    --text-muted: #3a4f66;
+    --ceo: #4a9eff;
+    --cfo: #22c55e;
+    --cto: #a855f7;
+    --coo: #f97316;
+    --cmo: #ec4899;
+    --vp: #06b6d4;
+    --hr: #ef4444;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Ambient background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 40% at 50% -10%, rgba(201,168,76,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 60% at 0% 50%, rgba(74,158,255,0.04) 0%, transparent 50%),
+      radial-gradient(ellipse 40% 60% at 100% 50%, rgba(168,85,247,0.04) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Grid texture */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ─── HEADER ─── */
+  header {
+    padding: 24px 0 20px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .brand-icon {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dim) 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    box-shadow: 0 0 20px rgba(201,168,76,0.3);
+  }
+
+  .brand-text h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .brand-text p {
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .status-bar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .status-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    background: rgba(34, 197, 94, 0.08);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    border-radius: 100px;
+    font-size: 11px;
+    font-family: 'DM Mono', monospace;
+    color: #22c55e;
+    letter-spacing: 0.5px;
+  }
+
+  .status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #22c55e;
+    animation: pulse-green 2s infinite;
+  }
+
+  @keyframes pulse-green {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
+    50% { opacity: 0.7; box-shadow: 0 0 0 4px rgba(34,197,94,0); }
+  }
+
+  .india-badge {
+    font-size: 11px;
+    color: var(--text-dim);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.5px;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    padding: 48px 0 36px;
+    text-align: center;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 18px;
+    border: 1px solid var(--gold-dim);
+    border-radius: 100px;
+    font-size: 11px;
+    font-family: 'DM Mono', monospace;
+    color: var(--gold);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    background: rgba(201,168,76,0.05);
+  }
+
+  .hero h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(42px, 7vw, 80px);
+    letter-spacing: 3px;
+    line-height: 0.95;
+    margin-bottom: 16px;
+    background: linear-gradient(180deg, var(--text) 0%, var(--text-dim) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero h2 span {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 15px;
+    color: var(--text-dim);
+    max-width: 520px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ─── COMPANY SELECTOR ─── */
+  .company-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+  .company-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-right: 4px;
+  }
+
+  .company-btn {
+    padding: 7px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text-dim);
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+
+  .company-btn:hover {
+    border-color: var(--border-bright);
+    color: var(--text);
+  }
+
+  .company-btn.active {
+    background: rgba(201,168,76,0.1);
+    border-color: var(--gold-dim);
+    color: var(--gold);
+  }
+
+  /* ─── INPUT AREA ─── */
+  .input-section {
+    max-width: 760px;
+    margin: 0 auto 48px;
+  }
+
+  .input-wrapper {
+    position: relative;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-bright);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: border-color 0.3s;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.4);
+  }
+
+  .input-wrapper:focus-within {
+    border-color: var(--gold-dim);
+    box-shadow: 0 4px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(201,168,76,0.15);
+  }
+
+  .challenge-input {
+    width: 100%;
+    padding: 20px 24px 16px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    resize: none;
+    min-height: 80px;
+    line-height: 1.6;
+  }
+
+  .challenge-input::placeholder {
+    color: var(--text-muted);
+  }
+
+  .input-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    border-top: 1px solid var(--border);
+    gap: 12px;
+  }
+
+  .input-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .char-count {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-family: 'DM Mono', monospace;
+  }
+
+  .voice-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-dim);
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .voice-btn:hover {
+    border-color: var(--border-bright);
+    color: var(--text);
+  }
+
+  .voice-btn.listening {
+    border-color: var(--ceo);
+    color: var(--ceo);
+    background: rgba(74,158,255,0.08);
+    animation: voice-pulse 1.5s infinite;
+  }
+
+  @keyframes voice-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(74,158,255,0.2); }
+    50% { box-shadow: 0 0 0 6px rgba(74,158,255,0); }
+  }
+
+  .analyze-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    background: linear-gradient(135deg, var(--gold) 0%, #a87830 100%);
+    border: none;
+    border-radius: 8px;
+    color: #000;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .analyze-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(201,168,76,0.3);
+  }
+
+  .analyze-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  /* ─── BOARDROOM ─── */
+  .boardroom-section {
+    padding-bottom: 60px;
+  }
+
+  .boardroom-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  .boardroom-label h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: var(--text-dim);
+  }
+
+  .boardroom-label-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--border) 0%, transparent 100%);
+  }
+
+  /* Executive Grid */
+  .exec-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+
+  @media (max-width: 1100px) {
+    .exec-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  @media (max-width: 600px) {
+    .exec-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .exec-card {
+    position: relative;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    overflow: hidden;
+  }
+
+  .exec-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--role-color, var(--gold));
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .exec-card:hover {
+    border-color: var(--border-bright);
+    transform: translateY(-2px);
+  }
+
+  .exec-card.active {
+    border-color: var(--role-color, var(--gold));
+    background: color-mix(in srgb, var(--role-color, var(--gold)) 8%, var(--bg-card));
+  }
+
+  .exec-card.active::before {
+    opacity: 1;
+  }
+
+  .exec-card.responding {
+    animation: card-glow 0.8s ease-in-out infinite alternate;
+  }
+
+  @keyframes card-glow {
+    from { box-shadow: 0 0 0 0 transparent; }
+    to { box-shadow: 0 0 20px color-mix(in srgb, var(--role-color, var(--gold)) 40%, transparent); }
+  }
+
+  .exec-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--role-color, var(--gold)) 15%, var(--bg));
+    border: 2px solid color-mix(in srgb, var(--role-color, var(--gold)) 30%, transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin: 0 auto 10px;
+    transition: all 0.3s;
+    position: relative;
+  }
+
+  .exec-card.responding .exec-avatar {
+    animation: avatar-speak 0.6s ease-in-out infinite alternate;
+  }
+
+  @keyframes avatar-speak {
+    from { transform: scale(1); border-color: color-mix(in srgb, var(--role-color, var(--gold)) 30%, transparent); }
+    to { transform: scale(1.08); border-color: var(--role-color, var(--gold)); box-shadow: 0 0 16px color-mix(in srgb, var(--role-color, var(--gold)) 50%, transparent); }
+  }
+
+  .exec-role {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    color: var(--role-color, var(--text));
+    line-height: 1;
+    margin-bottom: 3px;
+  }
+
+  .exec-title {
+    font-size: 9px;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+    font-family: 'DM Mono', monospace;
+    text-transform: uppercase;
+  }
+
+  .exec-status {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--text-muted);
+  }
+
+  .exec-card.responding .exec-status {
+    background: var(--role-color, var(--gold));
+    animation: pulse-status 1s infinite;
+  }
+
+  @keyframes pulse-status {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* ─── RESPONSES ─── */
+  .responses-area {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .response-card {
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    animation: slide-in 0.4s ease-out;
+    border-left: 3px solid var(--role-color, var(--gold));
+  }
+
+  @keyframes slide-in {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .response-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    background: color-mix(in srgb, var(--role-color, var(--gold)) 5%, var(--bg-panel));
+  }
+
+  .response-identity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .response-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--role-color, var(--gold)) 20%, var(--bg));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    border: 1px solid color-mix(in srgb, var(--role-color, var(--gold)) 40%, transparent);
+  }
+
+  .response-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    color: var(--role-color, var(--text));
+  }
+
+  .response-role-title {
+    font-size: 10px;
+    color: var(--text-muted);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.5px;
+  }
+
+  .response-badge {
+    font-size: 10px;
+    font-family: 'DM Mono', monospace;
+    padding: 3px 10px;
+    border-radius: 100px;
+    background: color-mix(in srgb, var(--role-color, var(--gold)) 15%, transparent);
+    color: var(--role-color, var(--gold));
+    border: 1px solid color-mix(in srgb, var(--role-color, var(--gold)) 30%, transparent);
+    letter-spacing: 0.5px;
+  }
+
+  .response-body {
+    padding: 20px 24px;
+  }
+
+  .response-text {
+    font-size: 14px;
+    line-height: 1.85;
+    color: var(--text);
+    font-weight: 300;
+  }
+
+  .response-text strong {
+    color: var(--role-color, var(--gold));
+    font-weight: 600;
+  }
+
+  /* Typing animation */
+  .typing-indicator {
+    display: flex;
+    gap: 4px;
+    padding: 20px 24px;
+    align-items: center;
+  }
+
+  .typing-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--role-color, var(--gold));
+    animation: typing 1.4s infinite;
+  }
+
+  .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+  .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+  @keyframes typing {
+    0%, 60%, 100% { opacity: 0.2; transform: scale(0.8); }
+    30% { opacity: 1; transform: scale(1); }
+  }
+
+  /* ─── EMPTY STATE ─── */
+  .empty-state {
+    text-align: center;
+    padding: 60px 24px;
+    border: 1px dashed var(--border);
+    border-radius: 16px;
+    background: var(--bg-panel);
+  }
+
+  .empty-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    opacity: 0.4;
+  }
+
+  .empty-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+  }
+
+  .empty-sub {
+    font-size: 13px;
+    color: var(--text-muted);
+    max-width: 320px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ─── ACTIONS ─── */
+  .actions-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 0;
+    border-top: 1px solid var(--border);
+    margin-top: 20px;
+  }
+
+  .action-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 18px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text-dim);
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+  }
+
+  .action-btn:hover {
+    border-color: var(--border-bright);
+    color: var(--text);
+  }
+
+  .action-btn.gold {
+    border-color: var(--gold-dim);
+    color: var(--gold);
+    background: rgba(201,168,76,0.06);
+  }
+
+  .action-btn.gold:hover {
+    background: rgba(201,168,76,0.12);
+  }
+
+  /* ─── LOADING OVERLAY ─── */
+  .loading-bar {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    transition: width 0.3s;
+    z-index: 100;
+  }
+
+  .loading-bar.active {
+    animation: loading-sweep 2s ease-in-out infinite;
+  }
+
+  @keyframes loading-sweep {
+    0% { left: -50%; width: 50%; }
+    100% { left: 100%; width: 50%; }
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 20px 0;
+    margin-top: 40px;
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .footer-links a {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover {
+    color: var(--text-dim);
+  }
+
+  /* ─── ERROR ─── */
+  .error-banner {
+    display: none;
+    padding: 14px 20px;
+    background: rgba(239,68,68,0.08);
+    border: 1px solid rgba(239,68,68,0.2);
+    border-radius: 10px;
+    color: #ef4444;
+    font-size: 13px;
+    margin-bottom: 20px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* PDF print styles */
+  @media print {
+    body::before, body::after { display: none; }
+    header, .input-section, .company-selector, .boardroom-label, .exec-grid,
+    .actions-bar, footer, .hero { display: none !important; }
+    .response-card { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="loading-bar" id="loadingBar"></div>
+
+<div class="container">
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-icon">🔱</div>
+        <div class="brand-text">
+          <h1>Vishwakarma AI</h1>
+          <p>Enterprise Strategic Intelligence</p>
+        </div>
+      </div>
+      <div class="status-bar">
+        <div class="status-pill">
+          <div class="status-dot"></div>
+          BOARDROOM ACTIVE
+        </div>
+        <div class="india-badge">🇮🇳 Built in India</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-eyebrow">
+      ⚡ World's First Animated AI Boardroom
+    </div>
+    <h2>Your <span>Executive Board</span><br>On Demand</h2>
+    <p class="hero-sub">7 AI executives analyze your challenge simultaneously. Real intelligence. Honest advice. Board-level strategy in 30 seconds.</p>
+  </div>
+
+  <!-- Company Type -->
+  <div class="company-selector">
+    <span class="company-label">Company:</span>
+    <button class="company-btn active" onclick="selectCompany(this, 'SaaS Startup')">SaaS Startup</button>
+    <button class="company-btn" onclick="selectCompany(this, 'Solo Founder')">Solo Founder</button>
+    <button class="company-btn" onclick="selectCompany(this, 'Enterprise')">Enterprise</button>
+    <button class="company-btn" onclick="selectCompany(this, 'Agency')">Agency</button>
+    <button class="company-btn" onclick="selectCompany(this, 'MNC')">MNC</button>
+    <button class="company-btn" onclick="selectCompany(this, 'Tech Startup')">Tech Startup</button>
+    <button class="company-btn" onclick="selectCompany(this, 'SME')">SME</button>
+  </div>
+
+  <!-- Input -->
+  <div class="input-section">
+    <div class="error-banner" id="errorBanner"></div>
+    <div class="input-wrapper">
+      <textarea
+        class="challenge-input"
+        id="challengeInput"
+        placeholder="Describe your biggest business challenge or strategic question... e.g. 'We have zero customers and need revenue in 30 days'"
+        maxlength="600"
+        oninput="updateCharCount(this)"
+        onkeydown="handleKeydown(event)"
+      ></textarea>
+      <div class="input-actions">
+        <div class="input-meta">
+          <span class="char-count" id="charCount">0 / 600</span>
+          <button class="voice-btn" id="voiceBtn" onclick="toggleVoice()">
+            🎙 Speak
+          </button>
+        </div>
+        <button class="analyze-btn" id="analyzeBtn" onclick="runAnalysis()" disabled>
+          ⚡ Convene Board
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Boardroom -->
+  <div class="boardroom-section">
+    <div class="boardroom-label">
+      <h3>Executive Advisory Board</h3>
+      <div class="boardroom-label-line"></div>
+    </div>
+
+    <!-- Exec Grid -->
+    <div class="exec-grid" id="execGrid">
+      <div class="exec-card" id="card-CEO" style="--role-color: var(--ceo)" onclick="toggleExec('CEO')">
+        <div class="exec-status"></div>
+        <div class="exec-avatar">👔</div>
+        <div class="exec-role">CEO</div>
+        <div class="exec-title">Chief Executive Officer</div>
+      </div>
+      <div class="exec-card" id="card-CFO" style="--role-color: var(--cfo)" onclick="toggleExec('CFO')">
+        <div class="exec-status"></div>
+        <div class="exec-avatar">💰</div>
+        <div class="exec-role">CFO</div>
+        <div class="exec-title">Chief Financial Officer</div>
+      </div>
+      <div class="exec-card" id="card-CTO" style="--role-color: var(--cto)" onclick="toggleExec('CTO')">
+        <div class="exec-status"></div>
+        <div class="exec-avatar">⚙️</div>
+        <div class="exec-role">CTO</div>
+        <div class="exec-title">Chief Technology Officer</div>
+      </div>
+      <div class="exec-card" id="card-COO" style="--role-color: var(--coo)" onclick="toggleExec('COO')">
+        <div class="exec-status"></div>
+        <div class="exec-avatar">📊</div>
+        <div class="exec-role">COO</div>
+        <div class="exec-title">Chief Operations Officer</div>
+      </div>
+      <div class="exec-card" id="card-CMO" style="--role-color: var(--cmo)" onclick="toggleExec('CMO')">
+        <div class="exec-status"></div>
+        <div class="exec-avatar">📢</div>
+        <div class="exec-role">CMO</div>
+        <div class="exec-title">Chief Marketing Officer</div>
+      </div>
+      <div class="exec-card" id="card-VP" style="--role-color: var(--vp)" onclick="toggleExec('VP')">
+        <div class="exec-status"></div>
+        <div class="exec-avatar">🎯</div>
+        <div class="exec-role">VP</div>
+        <div class="exec-title">Vice President</div>
+      </div>
+      <div class="exec-card" id="card-HR" style="--role-color: var(--hr)" onclick="toggleExec('HR')">
+        <div class="exec-status"></div>
+        <div class="exec-avatar">👥</div>
+        <div class="exec-role">HR</div>
+        <div class="exec-title">Chief HR Officer</div>
+      </div>
+    </div>
+
+    <!-- Responses -->
+    <div id="responsesArea">
+      <div class="empty-state" id="emptyState">
+        <div class="empty-icon">🏛️</div>
+        <div class="empty-title">Boardroom Ready</div>
+        <p class="empty-sub">Describe your challenge above. All 7 executives will analyze simultaneously and deliver honest board-level advice.</p>
+      </div>
+    </div>
+
+    <!-- Actions bar (shown after responses) -->
+    <div class="actions-bar" id="actionsBar" style="display:none">
+      <button class="action-btn gold" onclick="exportPDF()">📄 Export Board Report</button>
+      <button class="action-btn" onclick="clearBoard()">↩ New Session</button>
+      <button class="action-btn" onclick="speakAll()">🔊 Read All Responses</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">Vishwakarma AI © 2026</div>
+      <div class="footer-links">
+        <a href="https://www.vishwakarmaai.com">Home</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+// ─── STATE ───
+let selectedCompany = 'SaaS Startup';
+let activeExecs = new Set(['CEO','CFO','CTO','COO','CMO','VP','HR']);
+let currentResponses = {};
+let isAnalyzing = false;
+let recognition = null;
+let isListening = false;
+
+const EXEC_CONFIG = {
+  CEO: { emoji: '👔', title: 'Chief Executive Officer', color: '#4a9eff' },
+  CFO: { emoji: '💰', title: 'Chief Financial Officer', color: '#22c55e' },
+  CTO: { emoji: '⚙️', title: 'Chief Technology Officer', color: '#a855f7' },
+  COO: { emoji: '📊', title: 'Chief Operations Officer', color: '#f97316' },
+  CMO: { emoji: '📢', title: 'Chief Marketing Officer', color: '#ec4899' },
+  VP:  { emoji: '🎯', title: 'Vice President', color: '#06b6d4' },
+  HR:  { emoji: '👥', title: 'Chief HR Officer', color: '#ef4444' },
+};
+
+const SYSTEM_PROMPTS = {
+  CEO: `You are the Chief Executive Officer advising a {company} founder. Give honest, direct, no-BS strategic advice. Focus on vision, market positioning, and decisive action. Be specific, bold, and challenge assumptions. Use real frameworks and concrete steps. 3-4 paragraphs. Start with the most important insight.`,
+  CFO: `You are the Chief Financial Officer advising a {company} founder. Give brutally honest financial perspective. Focus on unit economics, cash flow, pricing strategy, and financial sustainability. Be specific with numbers and metrics. Call out financial risks directly. 3-4 paragraphs.`,
+  CTO: `You are the Chief Technology Officer advising a {company} founder. Give direct technical and product strategy advice. Focus on tech architecture decisions, build vs buy, scalability, and product roadmap prioritization. Be specific about technical trade-offs. 3-4 paragraphs.`,
+  COO: `You are the Chief Operations Officer advising a {company} founder. Focus on execution, process optimization, and operational efficiency. Be specific about workflows, systems, and bottlenecks. Give actionable operational steps. 3-4 paragraphs.`,
+  CMO: `You are the Chief Marketing Officer advising a {company} founder. Give direct marketing and growth strategy advice. Focus on customer acquisition, positioning, messaging, and channels that actually work. Be specific about tactics and metrics. 3-4 paragraphs.`,
+  VP:  `You are the Vice President of Strategy advising a {company} founder. Focus on strategic execution, partnerships, and cross-functional alignment. Be specific about priorities and resource allocation. Give actionable strategic steps. 3-4 paragraphs.`,
+  HR:  `You are the Chief Human Resources Officer advising a {company} founder. Focus on talent strategy, culture, and organizational design. Be specific about hiring priorities, team structure, and people challenges. 3-4 paragraphs.`,
+};
+
+// ─── INIT ───
+document.addEventListener('DOMContentLoaded', () => {
+  // All execs active by default
+  document.querySelectorAll('.exec-card').forEach(card => card.classList.add('active'));
+  setupVoice();
+});
+
+// ─── COMPANY SELECTION ───
+function selectCompany(btn, company) {
+  document.querySelectorAll('.company-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  selectedCompany = company;
+}
+
+// ─── EXEC TOGGLE ───
+function toggleExec(role) {
+  if (activeExecs.has(role)) {
+    if (activeExecs.size > 1) {
+      activeExecs.delete(role);
+      document.getElementById('card-' + role).classList.remove('active');
+    }
+  } else {
+    activeExecs.add(role);
+    document.getElementById('card-' + role).classList.add('active');
+  }
+}
+
+// ─── INPUT ───
+function updateCharCount(textarea) {
+  const count = textarea.value.length;
+  document.getElementById('charCount').textContent = count + ' / 600';
+  document.getElementById('analyzeBtn').disabled = count < 10 || isAnalyzing;
+}
+
+function handleKeydown(e) {
+  if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+    runAnalysis();
+  }
+}
+
+// ─── VOICE ───
+function setupVoice() {
+  if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    recognition = new SR();
+    recognition.continuous = false;
+    recognition.interimResults = true;
+    recognition.lang = 'en-IN';
+
+    recognition.onresult = (e) => {
+      const transcript = Array.from(e.results).map(r => r[0].transcript).join('');
+      document.getElementById('challengeInput').value = transcript;
+      updateCharCount(document.getElementById('challengeInput'));
+    };
+
+    recognition.onend = () => {
+      isListening = false;
+      const btn = document.getElementById('voiceBtn');
+      btn.textContent = '🎙 Speak';
+      btn.classList.remove('listening');
+    };
+
+    recognition.onerror = () => {
+      isListening = false;
+      const btn = document.getElementById('voiceBtn');
+      btn.textContent = '🎙 Speak';
+      btn.classList.remove('listening');
+    };
+  }
+}
+
+function toggleVoice() {
+  if (!recognition) {
+    alert('Voice recognition not supported in this browser. Please use Chrome.');
+    return;
+  }
+  if (isListening) {
+    recognition.stop();
+  } else {
+    recognition.start();
+    isListening = true;
+    const btn = document.getElementById('voiceBtn');
+    btn.textContent = '🔴 Listening...';
+    btn.classList.add('listening');
+  }
+}
+
+// ─── ANALYSIS ───
+async function runAnalysis() {
+  const challenge = document.getElementById('challengeInput').value.trim();
+  if (!challenge || challenge.length < 10 || isAnalyzing) return;
+
+  isAnalyzing = true;
+  currentResponses = {};
+  document.getElementById('analyzeBtn').disabled = true;
+  document.getElementById('analyzeBtn').textContent = '⏳ Convening...';
+  document.getElementById('errorBanner').style.display = 'none';
+
+  // Start loading bar
+  const loadingBar = document.getElementById('loadingBar');
+  loadingBar.classList.add('active');
+
+  // Clear previous responses
+  document.getElementById('emptyState').style.display = 'none';
+  document.getElementById('actionsBar').style.display = 'none';
+
+  const responsesArea = document.getElementById('responsesArea');
+  responsesArea.innerHTML = '';
+
+  const execsToQuery = Array.from(activeExecs);
+
+  // Create placeholder cards with typing indicators
+  execsToQuery.forEach(role => {
+    const config = EXEC_CONFIG[role];
+    responsesArea.innerHTML += `
+      <div class="response-card" id="response-${role}" style="--role-color: ${config.color}">
+        <div class="response-header">
+          <div class="response-identity">
+            <div class="response-avatar">${config.emoji}</div>
+            <div>
+              <div class="response-name">${role}</div>
+              <div class="response-role-title">${config.title}</div>
+            </div>
+          </div>
+          <div class="response-badge">ANALYZING...</div>
+        </div>
+        <div class="typing-indicator" id="typing-${role}">
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+          <span style="font-size:12px;color:var(--text-muted);margin-left:8px;font-family:'DM Mono',monospace">Processing ${selectedCompany} context...</span>
+        </div>
+      </div>
+    `;
+    document.getElementById('card-' + role).classList.add('responding');
+  });
+
+  // Scroll to responses
+  responsesArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  // Fire all API calls in parallel
+  const promises = execsToQuery.map(role => callClaude(role, challenge));
+  const results = await Promise.allSettled(promises);
+
+  // Update each card with response
+  results.forEach((result, i) => {
+    const role = execsToQuery[i];
+    const config = EXEC_CONFIG[role];
+    const card = document.getElementById('response-' + role);
+    document.getElementById('card-' + role).classList.remove('responding');
+
+    if (result.status === 'fulfilled') {
+      const text = result.value;
+      currentResponses[role] = text;
+
+      card.innerHTML = `
+        <div class="response-header">
+          <div class="response-identity">
+            <div class="response-avatar">${config.emoji}</div>
+            <div>
+              <div class="response-name">${role}</div>
+              <div class="response-role-title">${config.title}</div>
+            </div>
+          </div>
+          <div class="response-badge">LIVE ADVISORY</div>
+        </div>
+        <div class="response-body">
+          <div class="response-text">${formatResponse(text)}</div>
+        </div>
+      `;
+    } else {
+      card.innerHTML = `
+        <div class="response-header">
+          <div class="response-identity">
+            <div class="response-avatar">${config.emoji}</div>
+            <div>
+              <div class="response-name">${role}</div>
+              <div class="response-role-title">${config.title}</div>
+            </div>
+          </div>
+          <div class="response-badge" style="color:#ef4444;border-color:#ef4444">ERROR</div>
+        </div>
+        <div class="response-body">
+          <div class="response-text" style="color:var(--text-muted)">Advisory unavailable. Please check your API configuration and try again.</div>
+        </div>
+      `;
+    }
+  });
+
+  // Done
+  loadingBar.classList.remove('active');
+  isAnalyzing = false;
+  document.getElementById('analyzeBtn').disabled = false;
+  document.getElementById('analyzeBtn').textContent = '⚡ Convene Board';
+
+  if (Object.keys(currentResponses).length > 0) {
+    document.getElementById('actionsBar').style.display = 'flex';
+  }
+}
+
+// ─── CLAUDE API ───
+async function callClaude(role, challenge) {
+  const systemPrompt = SYSTEM_PROMPTS[role].replace('{company}', selectedCompany);
+
+  const response = await fetch('/api/boardroom', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      role,
+      systemPrompt,
+      challenge,
+      company: selectedCompany,
+    }),
+  });
+
+  if (!response.ok) {
+    const err = await response.json().catch(() => ({}));
+    throw new Error(err.error || 'API error');
+  }
+
+  const data = await response.json();
+  return data.response;
+}
+
+// ─── FORMAT RESPONSE ───
+function formatResponse(text) {
+  return text
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.*?)\*/g, '<em>$1</em>')
+    .replace(/\n\n/g, '</p><p style="margin-top:12px">')
+    .replace(/\n/g, '<br>');
+}
+
+// ─── PDF EXPORT ───
+function exportPDF() {
+  const printContent = Object.entries(currentResponses).map(([role, text]) => {
+    const config = EXEC_CONFIG[role];
+    return `
+      <div style="margin-bottom:32px;padding:20px;border:1px solid #ddd;border-radius:8px;border-left:4px solid ${config.color}">
+        <h3 style="margin:0 0 4px;font-size:16px">${config.emoji} ${role} — ${config.title}</h3>
+        <p style="margin:0 0 16px;font-size:12px;color:#666">${config.title}</p>
+        <p style="font-size:13px;line-height:1.8;color:#333">${text.replace(/\n/g, '<br>')}</p>
+      </div>
+    `;
+  }).join('');
+
+  const win = window.open('', '_blank');
+  win.document.write(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Vishwakarma AI — Executive Board Report</title>
+      <style>
+        body { font-family: Georgia, serif; max-width: 800px; margin: 40px auto; color: #111; }
+        h1 { font-size: 28px; border-bottom: 3px solid #c9a84c; padding-bottom: 12px; }
+        .meta { color: #666; font-size: 13px; margin: 12px 0 32px; }
+        @media print { body { margin: 20px; } }
+      </style>
+    </head>
+    <body>
+      <h1>🔱 Executive Board Report</h1>
+      <div class="meta">
+        <strong>Company Type:</strong> ${selectedCompany} &nbsp;|&nbsp;
+        <strong>Generated:</strong> ${new Date().toLocaleString('en-IN')} &nbsp;|&nbsp;
+        <strong>Powered by:</strong> Vishwakarma AI
+      </div>
+      <div style="padding:16px;background:#f8f8f8;border-radius:6px;margin-bottom:32px">
+        <strong>Strategic Challenge:</strong><br>
+        <p style="margin:8px 0 0;font-size:15px">${document.getElementById('challengeInput').value}</p>
+      </div>
+      ${printContent}
+      <div style="text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid #ddd;font-size:12px;color:#999">
+        Vishwakarma AI — Enterprise Strategic Intelligence | vishwakarmaai.com | Built in India 🇮🇳
+      </div>
+    </body>
+    </html>
+  `);
+  win.document.close();
+  win.print();
+}
+
+// ─── SPEAK ALL ───
+function speakAll() {
+  if (!window.speechSynthesis) {
+    alert('Text-to-speech not supported in this browser.');
+    return;
+  }
+  window.speechSynthesis.cancel();
+  Object.entries(currentResponses).forEach(([role, text], i) => {
+    const utterance = new SpeechSynthesisUtterance(`${role} says: ${text}`);
+    utterance.rate = 0.9;
+    utterance.pitch = 1;
+    utterance.lang = 'en-IN';
+    window.speechSynthesis.speak(utterance);
+  });
+}
+
+// ─── CLEAR ───
+function clearBoard() {
+  currentResponses = {};
+  document.getElementById('challengeInput').value = '';
+  document.getElementById('charCount').textContent = '0 / 600';
+  document.getElementById('analyzeBtn').disabled = true;
+  document.getElementById('actionsBar').style.display = 'none';
+  document.getElementById('responsesArea').innerHTML = `
+    <div class="empty-state" id="emptyState">
+      <div class="empty-icon">🏛️</div>
+      <div class="empty-title">Boardroom Ready</div>
+      <p class="empty-sub">Describe your challenge above. All 7 executives will analyze simultaneously and deliver honest board-level advice.</p>
+    </div>
+  `;
+}
+</script>
+</body>
+</html>
